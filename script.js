@@ -1,22 +1,29 @@
-//Sistema de login
+//Sistema de login del sitio
     //Le pido los datos al usuario
 
-//variables
+//funciones
 
-alert("Registrate para entrar en la plataforma.");
-const año = parseInt(prompt("Ingrese su año de nacimiento"));
-let edad = 2022 - año;
+function calculoEdad(p2){
+    let resultado = 2022 - p2
+    return resultado
+};
+
 
 //Condicionales (se le pide el año al usuario para calcular su edad)
+alert("Registrate para entrar en la plataforma.");
+const año = parseInt(prompt("Ingrese su año de nacimiento"));
+let edad = calculoEdad(año);
 
-if(edad>=18 && edad<=100){
-    alert("Listo! ahora falta crear un usuario y una contraseña")
-} else if(edad>100 || edad<100){
-    alert("Los datos ingresados son invalidos")
-} else {
-    alert("Necesitas tener más de 18 años para ingresar a la plataforma")
+while(edad<18 || edad>100){
+    if(edad>=18 && edad<=100){
+        alert("Listo! ahora falta crear un usuario y una contraseña")
+        break
+    } else if(edad>100 || edad<=0){
+        alert("Los datos ingresados son invalidos")
+    } else {
+        alert("Necesitas tener más de 18 años para ingresar a la plataforma")
+    }
 }
-
 //declaro la variable usuario2
 let usuario2
 
@@ -61,11 +68,11 @@ while(usuario != usuarioInicio || contraseña != contraseñaInicio){
         const usuarioInicio = prompt("Ingrese el nombre de usuario: ");
         const contraseñaInicio = prompt("Ingresa la contraseña ");
         if(usuarioInicio === usuario && contraseñaInicio === contraseña){
-            alert("Inicio de sesión correcto, bienvenido "+usuario);
+            alert(`Inicio de sesión correcto, bienvenido ${usuario}`);
             console.log("el usuario ingresa a la plataforma")
             break
         } else {
-            alert("Usuario o contraseña incorrecto, le quedan "+i+" intentos");
+            alert(`Usuario o contraseña incorrecto, le quedan ${i} intentos`);
             console.log("el usuario no ingresa a la plataforma") 
         }
     }
