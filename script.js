@@ -28,23 +28,20 @@ alert("Edad valida! Ahora ingresá un usuario y una contraseña")
 
 //declaro la variables de usuarios
 
-
-let  usuario = prompt("Ingrese su nombre de usuario:");
+let  usuario = prompt("Ingrese su nombre de usuario");
 console.log(usuario);
 let usuario2 = prompt("Vuelva a ingresar el nombre de usuario");
 console.log(usuario2);
-
-while(usuario =! usuario2){
-    alert("El usuario no es el mismo al ingresado")
-    let  usuario = prompt("Ingrese su nombre de usuario:");
+    
+while(usuario != usuario2){
+    alert("El nombre de usuario no es el mismo al ingresado, intentelo de nuevo.");
+    let  usuario = prompt("Ingrese su nombre de usuario");
     console.log(usuario);
     let usuario2 = prompt("Vuelva a ingresar el nombre de usuario");
     console.log(usuario2);
-    console.log(contraseña);
     if(usuario === usuario2){
         break
     } else {
-        alert("el nombre de usuario no es el mismo al ingresado");
         continue
     }
 }
@@ -54,12 +51,12 @@ alert("Ahora ingrese una contraseña:");
 //declaro la variables contraseñas
 
 let contraseña = prompt("Contraseña");
-    console.log(contraseña);
+console.log(contraseña);
 let contraseña2 = prompt("Vuelve a ingresar la contraseña");
-    console.log(contraseña2)
+console.log(contraseña2)
 
 while(contraseña != contraseña2){
-    alert("la contraseña no es la misma a la ingresada")
+    alert("la contraseña no es la misma a la ingresada, intentelo de nuevo")
     let contraseña = prompt("Contraseña");
     console.log(contraseña);
     let contraseña2 = prompt("Vuelve a ingresar la contraseña");
@@ -70,23 +67,20 @@ while(contraseña != contraseña2){
         continue
     }
 }
+
 alert("Gracias por registrarte! ahora inicia sesión para ingresar a la plataforma");
 
-let usuarioInicio = prompt("Ingrese el nombre de usuario: ");
-console.log(usuarioInicio)
-console.log(usuario)
-let contraseñaInicio = prompt("Ingresa la contraseña ");
-console.log(contraseñaInicio)
-console.log(contraseña)
+let usuarioInicio
+let contraseñaInicio
 
 //CICLOS
     //ciclo for (5 intentos de inicio de sesión)
-while(usuario != usuarioInicio || contraseña != contraseñaInicio){
-    alert(`Usuario o contraseña incorrecto, vuelva a intentarlo`);
-    console.log("el usuario no ingresa a la plataforma") 
-     let usuarioInicio = prompt("Ingrese el nombre de usuario: ");
-     let contraseñaInicio = prompt("Ingresa la contraseña ");
-     if(usuarioInicio != usuario || contraseñaInicio != contraseña){
+while(usuario2 != usuarioInicio || contraseña2 != contraseñaInicio){
+    let usuarioInicio = prompt("Ingrese el nombre de usuario:");
+    let contraseñaInicio = prompt("Ingresa la contraseña");
+    if(usuarioInicio != usuario || contraseñaInicio != contraseña){
+        alert(`Usuario o contraseña incorrecto, vuelva a intentarlo`)
+        console.log("el usuario no ingresa a la plataforma") 
         continue
     } else {
         break
