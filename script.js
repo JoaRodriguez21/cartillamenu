@@ -74,7 +74,7 @@ let usuarioInicio
 let contraseñaInicio
 
 //CICLOS
-    //ciclo for (5 intentos de inicio de sesión)
+
 while(usuario2 != usuarioInicio || contraseña2 != contraseñaInicio){
     let usuarioInicio = prompt("Ingrese el nombre de usuario:");
     let contraseñaInicio = prompt("Ingresa la contraseña");
