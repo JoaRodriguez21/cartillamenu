@@ -1,8 +1,17 @@
-// Simulador Menú restorant
+// Simulador Menú
+
+//El cliente coloca el numero de su mesa para que el negocio identifique el pedido
+const NumeroMesa = parseInt(prompt(`Seleccióne el numero de su mesa: `))
+
+//variables declaradas
 
 let totalCompra = 0
 let seguirComprando = true
 let decision
+let productosOfrecidos = "Arma tu menú con los siguientes productos: "
+
+
+//clases
 
 class Producto{
   constructor(id, nombre, categoria, precio){
@@ -14,109 +23,56 @@ class Producto{
 
 }
 
-const hamburguesaPollo = new Producto(1,"Hamburguesa de Pollo","Hamburguesas",1200)
-const hamburguesaCarne = new Producto(2, "Hamburguesa de Carne", "Hamburguesas", 1400)
-const hamburguesaVegie = new Producto(3, "Hamburguesa Vegetariana", "Hamburguesas", 900)
-const hamburguesaSoja = new Producto(4, "Hamburguesa de Soja", "Hamburguesas", 1100)
-const papasGrandes = new Producto(5, "Papas fritas Grandes", "Papas fritas", 800)
-const papasChicas = new Producto(6, "Papas fritas Chicas", "Papas fritas", 500)
-const cocacola = new Producto(7, "Vaso de Coca-Cola", "Bebida", 300)
-const sprite = new Producto(8, "Vaso de Sprite", "Bebida", 300)
+//funciones
+function agregarProducto (){
+  for(item of productosExistentes){
+   productosOfrecidos += ` \n - ${item.id} ${item.nombre} $${item.precio}`
+  }
+}
 
+// genero los productos
 
+const producto1 = new Producto(1,"Hamburguesa de Pollo","Hamburguesas",1200)
+const producto2 = new Producto(2, "Hamburguesa de Carne", "Hamburguesas", 1400)
+const producto3 = new Producto(3, "Hamburguesa Vegetariana", "Hamburguesas", 900)
+const producto4 = new Producto(4, "Hamburguesa de Soja", "Hamburguesas", 1100)
+const producto5 = new Producto(5, "Papas fritas Grandes", "Papas fritas", 800)
+const producto6 = new Producto(6, "Papas fritas Chicas", "Papas fritas", 500)
+const producto7 = new Producto(7, "Vaso de Coca-Cola", "Bebida", 300)
+const producto8 = new Producto(8, "Vaso de Sprite", "Bebida", 300)
+
+//array productos disponibles
+const productosExistentes = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8]
+console.log(productosExistentes)
+//array carrito
+const carrito = []
+
+//Elijo los productos de mi pedido
+for(item of productosExistentes){
+  productosOfrecidos += ` \n - ${item.id} ${item.nombre} $${item.precio}`
+}
 while (seguirComprando = true){
-  let producto = parseInt(prompt(`Escoge el plato principal de su pedido: 
-  1.${hamburguesaPollo.nombre} ($${hamburguesaPollo.precio})
-  2.${hamburguesaCarne.nombre} ($${hamburguesaCarne.precio})
-  3.${hamburguesaVegie.nombre} ($${hamburguesaVegie.precio}) 
-  4.${hamburguesaSoja.nombre} ($${hamburguesaSoja.precio})`))
-  
-  if (producto === 1){
-    //hamburguesa pollo
-    totalCompra = totalCompra + hamburguesaPollo.precio
-  } else if (producto === 2) {
-    //hamburguesa carne
-    totalCompra = totalCompra + hamburguesaCarne.precio
-  } else if (producto === 3) {
-    // hamburguesa vegetariana
-    totalCompra = totalCompra + hamburguesaVegie.precio
-  } else if (producto === 4) {
-    //hamburguesa Soja
-    totalCompra + totalCompra + hamburguesaSoja.precio
+  let productoCliente = parseInt(prompt(productosOfrecidos))
+
+  const platoCliente = productosExistentes.find((producto) => producto.id === productoCliente)
+  if (platoCliente){
+    console.log(platoCliente.nombre)
+    totalCompra += platoCliente.precio
+    carrito.push(platoCliente.nombre)
   } else {
     alert(`Error al escoger plato principal, vuelve a intentarlo.`)
     continue
   }
 
-  decision = parseInt(prompt(`Si desea agregar otro plato principal presione "1".
-  Si desea continuar presione cualquier tecla`))
+  decision = parseInt(prompt(`Si desea agregar otro plato principal presione "1". \n Si desea continuar presione 2`))
   if(decision === 1) {
     continue
-  } else{
-   break
+  } else if (decision === 2){
+    break
+  } else {
+    alert(`a ocurrido un error, vuelva a intentarlo`)
+    continue
   }
-
+  
 }
-console.log(totalCompra)
-seguirComprando = true
-
-while (seguirComprando = true){
-  let producto2 = parseInt(prompt(`Escoge un acompañamiento para su pedido: 
-  1.${papasChicas.nombre}($${papasChicas.precio}) 
-  2.${papasGrandes.nombre}($${papasGrandes.precio}) 
-  3.Sin Acompañamiento`))
-  if (producto2 === 1){
-    //papas chicas
-    totalCompra = totalCompra + papasChicas.precio
-  } else if (producto2 === 2){
-    //papas grandes
-    totalCompra = totalCompra + papasGrandes.precio
-  } else if (producto2 === 3){
-    //sin acompañamiento
-    break
-  } else {
-    alert(`La opción seleccionada no esta disponible, vuelve a intentarlo nuevamente`)
-    continue
-  }
-
-  decision = parseInt(prompt(`Si desea agregar otro acompañamiento presione "1".
-  Si desea continuar precione cualquier tecla`))
-  if(decision === 1) {
-    continue
-  } else {
-    break
-  }
-} 
-
-console.log(totalCompra)
-seguirComprando = true
-
-while(seguirComprando = true){
-  let producto3 = parseInt(prompt(`Escoge una bebida para su pedido 
-  1.${cocacola.nombre}($${cocacola.precio}) 
-  2.${sprite.nombre}($${sprite.precio}) 
-  3.Sin Bebidas`))
-  if (producto3 === 1){
-    //bebida cocacola
-    totalCompra = totalCompra + cocacola.precio
-  } else if (producto3 === 2){
-    //bebida sprite
-    totalCompra = totalCompra + sprite.precio
-  } else if (producto3 === 3){
-    //sin bebida
-    break
-  } else {
-    alert(`Escoge una bebida VALIDa para su pedido`)
-    continue
-  }
-
-  decision = parseInt(prompt(`Si desea agregar otra bebida presione "1".
-  Si desea continuar precione cualquier tecla`))
-  if(decision === 1) {
-    continue
-  } else {
-    break
-  }
-}
-console.log(totalCompra)
-alert (`El total de tu compra es ${totalCompra}`)
+alert(`los productos que seleccionaste son : \n ${carrito} \n el total de tu compra es: ${totalCompra}`)
