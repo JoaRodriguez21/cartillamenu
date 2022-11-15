@@ -1,0 +1,56 @@
+//IMPORT FONTS
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+//font-family: 'Poppins', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+//font-family: 'Roboto', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Play&family=Poppins&family=Roboto&display=swap');
+//font-family: 'Play', sans-serif;
+
+//PRINCIPAL
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: $font-principal;
+}
+
+html{
+    font-size: 62.5%;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+//ETIQUETAS
+
+h1{
+    @include texto($text-title,$font-title,$colorT);
+}
+
+h2{
+    @include texto($text-subtitle,$font-principal,$colorT);
+}
+
+h3{
+    @include texto($text-big,$font-principal,$colorB);
+}
+
+h4{
+    @include texto($text-mid,$font-principal,$colorB);
+}
+
+h5{
+    @include texto($text_small,$font-principal,$colorB);
+}
+
+h6{
+    @include texto($text_small,$font-title,$colorB);
+}
+
+p{
+    @include texto($text-mid,$font-principal,$colorB);
+}
+

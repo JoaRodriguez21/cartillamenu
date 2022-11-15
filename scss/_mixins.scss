@@ -1,0 +1,40 @@
+//MAPS
+
+//Paleta BG
+$paleta-bg:( 
+    "negro": rgba(0, 0, 0, 1.0),
+    "blanco":rgba(255, 255, 255, 1.0),
+    "rojoClaro": rgba(215, 75, 70, 1.0),
+    "rojo": rgba(215, 46, 40, 1.0),
+    "grisClaro": rgba(71, 71, 71, 1.0),
+    "gris": rgba(54, 54, 54, 1.0),
+);
+
+//paleta colores transparentes
+$paleta-bgT:(
+    "negro": rgba(0, 0, 0, 0.7),
+    "blanco":rgba(255, 255, 255, 0.7),
+    "rojoClaro": rgba(215, 75, 70, 0.7),
+    "rojo": rgba(215, 46, 40, 0.7),
+    "grisClaro": rgba(71, 71, 71, 10.7),
+    "gris": rgba(54, 54, 54, 0.7),
+);
+
+//MIXINS
+
+@mixin flex($FD,$JC,$AC,$FW){
+    display: flex;
+    flex-direction: $FD;
+    justify-content: $JC;
+    align-items: $AC;
+    flex-wrap: $FW;
+};
+//@include flex(FD,JC,AC,FW);
+
+@mixin texto($size,$font,$color){
+    font-size: $size;
+    font-family: $font;
+    color: $color;
+    text-align: center;
+};
+//@include texto($size,$font,$color);

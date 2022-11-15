@@ -1,0 +1,25 @@
+{
+  "name": "menu",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass",
+    "sass:watch": "sass --watch scss/main.scss  css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaRodriguez21/cartillamenu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoaRodriguez21/cartillamenu/issues"
+  },
+  "homepage": "https://github.com/JoaRodriguez21/cartillamenu#readme",
+  "dependencies": {
+    "sass": "^1.56.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
