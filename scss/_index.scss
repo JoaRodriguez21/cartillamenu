@@ -1,3 +1,17 @@
 /* HEADER */
 //Section
-.contenedorHeader
+.contenedorHeader{
+
+}
+
+/* PRODUCTOS */
+//Contenedor section
+.contenedorProductos{
+    @include flex(column, center, center, wrap);
+    padding: 100px 50px;
+}
+
+//productos bebidas calientes
+.bebidasCalientes{
+    @include flex(row, center, center, wrap);
+}

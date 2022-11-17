@@ -8,7 +8,28 @@
     width: 70px;
     height: 70px;
 }
-.textNav{
-    font-size: 1.6rem;
-    font-family: $font-title;
+nav{
+    div{
+        ul{
+            li{
+                a{
+                    font-size: 1.8rem !important;
+                    font-family: $font-title;
+                }
+            }
+
+        }
+    }
+};
+
+nav{
+    div{
+        ul{
+            li{
+                a:hover{
+                    color: $colorPrimario !important;
+                }
+            }
+        }
+    }
 }
