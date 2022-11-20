@@ -17,7 +17,15 @@
 .contImgCarrito:hover{
     transform: scale(1.1);
 }
+/* Titulo */
 
+/* Mesa */
+//.contenedorMesa{}
+.stickyCard{
+    position: sticky;
+    height: 100%;
+    width: 100%
+}
 /* PRODUCTOS */
 //Contenedor section
 .contenedorProductos{

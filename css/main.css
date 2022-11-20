@@ -109,6 +109,14 @@ nav div ul li a:hover {
   transform: scale(1.1);
 }
 
+/* Titulo */
+/* Mesa */
+.stickyCard {
+  position: sticky;
+  height: 100%;
+  width: 100%;
+}
+
 /* PRODUCTOS */
 .contenedorProductos {
   display: flex;
