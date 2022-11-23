@@ -111,12 +111,6 @@ nav div ul li a:hover {
 
 /* Titulo */
 /* Mesa */
-.stickyCard {
-  position: sticky;
-  height: 100%;
-  width: 100%;
-}
-
 /* PRODUCTOS */
 .contenedorProductos {
   display: flex;
