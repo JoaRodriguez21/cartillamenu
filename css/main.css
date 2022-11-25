@@ -103,10 +103,19 @@ nav div ul li a:hover {
 
 .contImgCarrito {
   transition: transform 0.2s;
+  padding: 10px;
 }
 
 .contImgCarrito:hover {
   transform: scale(1.1);
+}
+
+.displayCarritoN {
+  display: none;
+}
+
+.displayCarritoB {
+  display: block !important;
 }
 
 /* Titulo */
@@ -127,6 +136,19 @@ nav div ul li a:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.cardsProductos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 200px;
+  width: 180px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 /*# sourceMappingURL=main.css.map */
