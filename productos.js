@@ -32,14 +32,7 @@ const postres = [producto11, producto12, producto13]
 
 //agregar al carrito
 
-const agregarAlCarritoClick = (prodId) => {
-  const item = bebidasCalientes.find((prod) => prod.id === prodId)
-  carrito.push(item)
-  console.log(carrito)
-}
-
-
-const divAcompañamientos = document.getElementById("divAcompañamientos")
+/* const divAcompañamientos = document.getElementById("divAcompañamientos")
 
 acompañamientos.forEach(arrayAcompañamientos => {
   divAcompañamientos.innerHTML += `
@@ -66,7 +59,7 @@ postres.forEach(arrayPostres => {
   </div>
   </div>`
 })
-
+ */
 //section carrito
 /* const divCarrito = document.getElementById("divCarrito")
 

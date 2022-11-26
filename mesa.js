@@ -10,7 +10,7 @@ const imgCarrito = document.getElementById("imgCarrito");
 const divProductos = document.getElementById("divProductos");
 const divCarrito = document.getElementById("divCarrito");
 
-const cliente = 
+const cliente = []
 //guardo info en el storage
 botonIngresar.onclick = () => {
     const clienteNuevo = {
@@ -26,7 +26,7 @@ botonIngresar.onclick = () => {
         titulo.innerText = `Bienvenido a Cofe Shop, ya puedes realizar tu pedido`
         divTitulo.append(tituloMesa)
         divMesa.remove()
-        divCarrito.className = "displayCarritoB"
+        divCarrito.className = "displayCarritoB";
     }
     
 }

@@ -36,18 +36,17 @@
           <!-- boton carrito -->
           <div id="divCarrito" class="displayCarritoN">
             <div id="imgCarrito" class="contImgCarrito float-end">
-              <img src="img/iconos/carrito.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="modal" data-bs-target="#ModalCarrito">
+              <img id="verCarrito" src="img/iconos/carrito.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="modal" data-bs-target="#ModalCarrito">
             </div>
           </div>
-          <div class="modal fade" id="ModalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="ModalCarrito" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
                   <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                  ...
+                <div id="bodyCarrito" class="modal-body">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
@@ -56,28 +55,15 @@
               </div>
             </div>
           </div>
-          
-            <!-- <div id="imgCarrito" class="contImgCarrito">
-              <img src="img/iconos/carrito.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header">
-                  <h3 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h3>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body" id="divCarrito">
-                  ...
-                </div>
-              </div>
-            </div> -->
 
             <!-- agregar producto -->
           <div id="divModal">
             <div class="contImgCarrito float-end">
-              <img src="img/iconos/engranaje.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img src="img/iconos/engranaje.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="modal" data-bs-target="#ModalConfig">
             </div>
           </div>
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="ModalConfig" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">

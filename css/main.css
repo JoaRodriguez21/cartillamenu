@@ -84,18 +84,7 @@ nav div ul li a:hover {
   height: 70px;
 }
 
-/* HEADER */
-.contenedorHeader {
-  width: 100%;
-  height: 70px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 10px;
-}
-
+/* CARRITO */
 .logoCarrito {
   width: 50px;
   height: 50px;
@@ -116,6 +105,26 @@ nav div ul li a:hover {
 
 .displayCarritoB {
   display: block !important;
+}
+
+.cardsProductosCarrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* HEADER */
+.contenedorHeader {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 /* Titulo */
