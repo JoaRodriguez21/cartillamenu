@@ -41,12 +41,12 @@
             </div>
           </div>
           <div class="modal fade" id="ModalCarrito" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog carritoBody">
               <div class="modal-content">
                 <div class="modal-header">
                   <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
                 </div>
-                <div id="bodyCarrito" class="modal-body">
+                <div id="bodyCarrito" class="modal-body carritoColumn">
                 </div>
                 <div class="modal-footer">
                   <button id="seguirComprando" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
@@ -55,40 +55,6 @@
               </div>
             </div>
           </div>
-
-            <!-- agregar producto -->
-          <div id="divModal">
-            <div class="contImgCarrito float-end">
-              <img src="img/iconos/engranaje.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="modal" data-bs-target="#ModalConfig">
-            </div>
-          </div>
-            <!-- Modal -->
-            <div class="modal fade" id="ModalConfig" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar producto</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <h3>Nombre del producto</h3>
-                    <input id="nombreProducto" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                    <h3>Categoria</h3>
-                    <select id="selectCategoria" class="form-select" aria-label="Default select example">
-                      <option value="1">Bebidas Calientes</option>
-                      <option value="2">Acompañantes</option>
-                      <option value="3">Postres</option>
-                    </select>
-                    <h3>Precio del producto</h3>
-                    <input id="precioProducto" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button id="botonCrear" type="button" class="btn btn-primary">Crear producto</button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -136,16 +102,16 @@
     <!-- productos -->
     <section id="divProductos" class="contenedorProductos">
       <div>
-        <h2>Bebidas Calientes</h2>
+        <h2 id="tituloBebidasCalientes"></h2>
         <div id="shopBebidasCalientes" class="classProductos"></div>
       </div>
       <div>
-        <h2>Acompañantes</h2>
-        <div id="divAcompañamientos" class="classProductos"></div>
+        <h2 id="tituloAcompañantes"></h2>
+        <div id="shopAcompañantes" class="classProductos"></div>
       </div>
       <div>
-        <h2>Postres</h2>
-        <div id="divPostres" class="classProductos"></div>
+        <h2 id="tituloPostres"></h2>
+        <div id="shopPostres" class="classProductos"></div>
       </div>
     </section>
     <!-- footer -->

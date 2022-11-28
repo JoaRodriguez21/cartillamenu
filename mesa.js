@@ -9,6 +9,10 @@ const divMesa = document.getElementById("divMesa");
 const imgCarrito = document.getElementById("imgCarrito");
 const divProductos = document.getElementById("divProductos");
 const divCarrito = document.getElementById("divCarrito");
+//titulos productos
+const tituloBebidasCalientes = document.getElementById("tituloBebidasCalientes");
+const tituloAcompañantes = document.getElementById("tituloAcompañantes");
+const tituloPostres = document.getElementById("tituloPostres");
 
 const cliente = []
 //guardo info en el storage
@@ -17,20 +21,27 @@ botonIngresar.onclick = () => {
         nombre: inputCliente.value,
         mesa: inputMesa.value,
     }
-    const clienteNuevoJSON = localStorage.setItem("Cliente", JSON.stringify(clienteNuevo))
+    //Guardo el numero de la mesa en el Storage
+    const mesaClienteJSON = inputMesa.value;
+    localStorage.setItem("mesaCliente", JSON.stringify(mesaClienteJSON));
     //creo un h4 con su contenido
     const tituloMesa = document.createElement("h4")
-    tituloMesa.innerText = `El numero de mesa para ${clienteNuevo.nombre} es ${clienteNuevo.mesa}`
     //cambio el titulo del sitio
     if(clienteNuevo.nombre && clienteNuevo.mesa){
-        titulo.innerText = `Bienvenido a Cofe Shop, ya puedes realizar tu pedido`
-        divTitulo.append(tituloMesa)
+        tituloMesa.innerText = `El pedido que seleccione es para la mesa nº${JSON.parse(localStorage.getItem("mesaCliente"))}`
+        titulo.innerText = `Bienvenido a Cofe Shop ${clienteNuevo.nombre}`
+        divTitulo.append(tituloMesa);
         divMesa.remove()
         divCarrito.style.display = "block";
+        //Una vez registrada la mesa y el nombre muestro los productos
+        mostrarBebidasCalientes();
+        tituloBebidasCalientes.innerText = "Bebidas Calientes";
+        mostrarAcompañantes();
+        tituloAcompañantes.innerText = "Acompañantes";
+        mostrarPostres();
+        tituloPostres.innerText = "Postres";
     }
-    
 }
-
 //tomo la info del storage
 const nombreCliente = localStorage.getItem("usuario");
 const numeroMesa = localStorage.getItem("mesa");

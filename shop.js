@@ -4,16 +4,17 @@ const verCarrito = document.getElementById("verCarrito");
 //Cantidad de productos que hay en el carrito
 const numeroCarrito = document.getElementById("numeroCarrito");
 //div productos bebidas calientes
-const shopBebidasCalientes = document.getElementById("shopBebidasCalientes")
-
+const shopBebidasCalientes = document.getElementById("shopBebidasCalientes");
 //div productos Acompañantes
+const shopAcompañantes = document.getElementById("shopAcompañantes"); //si no funciona cambiar nombre 
 //div productos Postres
-
+const shopPostres = document.getElementById("shopPostres");
 
 //Array carrito: base de datos del carrito
 carrito = []
  
 //sección productos bebidas calientes
+const mostrarBebidasCalientes = () => {
 bebidasCalientes.forEach((arrayBebidasCalientes) => {
   let divBebidasCalientes = document.createElement("div");
   divBebidasCalientes.classList.add("classProductos");
@@ -29,6 +30,7 @@ bebidasCalientes.forEach((arrayBebidasCalientes) => {
     comprar.innerText = "Pedir!";
     comprar.className = "btn addCart btn-primary";
     divBebidasCalientes.append(comprar);
+  
     //verifico si el carrito tiene dos productos iguales y le sumo la cantidad
     comprar.addEventListener("click", () => {
       const repetido = carrito.some((productoRepetido) => productoRepetido.id === arrayBebidasCalientes.id);
@@ -50,34 +52,97 @@ bebidasCalientes.forEach((arrayBebidasCalientes) => {
         carritoContador();
       }
     });
-
 });
-/* 
-//boton carrito
-verCarrito.addEventListener("click", () => {
-  bodyCarrito.innerHTML = "";
-  carrito.forEach((arrayProductosCarrito) => {
-    let divProductosCarrito = document.createElement("div");
-    divProductosCarrito.className = "cardsProductosCarrito";
-    divProductosCarrito.innerHTML += `
-      <h3 class="card-title">${arrayProductosCarrito.nombre}</h3>
-      <p class="card-text">${arrayProductosCarrito.categoria}</p>
-      <p class="card-text">$${arrayProductosCarrito.precio}</p>
-      <p id="${arrayProductosCarrito.id}"></p>
-      <select></select>
-    `;
-    bodyCarrito.append(divProductosCarrito);
+};
+
+//sección productos acompañantes
+const mostrarAcompañantes = () => {
+  acompañamientos.forEach((arrayAcompañantes) => {
+    let divAcompañantes = document.createElement("div");
+    divAcompañantes.classList.add("classProductos");
+      divAcompañantes.className = "card-body cardsProductos";
+      divAcompañantes.innerHTML +=`
+        <h3 class="card-title">${arrayAcompañantes.nombre}</h3>
+        <p class="card-text">${arrayAcompañantes.categoria}</p>
+        <p class="card-text">$${arrayAcompañantes.precio}</p>
+      `;
+      shopAcompañantes.append(divAcompañantes)
+      //boton comprar
+      let comprar = document.createElement("button");
+      comprar.innerText = "Pedir!";
+      comprar.className = "btn addCart btn-primary";
+      divAcompañantes.append(comprar);
+      //verifico si el carrito tiene dos productos iguales y le sumo la cantidad
+      comprar.addEventListener("click", () => {
+        const repetido = carrito.some((productoRepetido) => productoRepetido.id === arrayAcompañantes.id);
+        if(repetido === true){
+          carrito.map((prod) => {
+            if(prod.id === arrayAcompañantes.id){
+              prod.cantidad++
+            }
+          })
+        } else {
+          carrito.push({
+              id: arrayAcompañantes.id,
+              nombre: arrayAcompañantes.nombre,
+              categoria: arrayAcompañantes.categoria,
+              precio: arrayAcompañantes.precio,
+              cantidad: arrayAcompañantes.cantidad,
+          });
+          console.log(carrito)
+          carritoContador();
+        }
+      });
   });
-  const total = carrito.reduce((acc, el) => acc + el.precio, 0);
-  const totalPedido = document.createElement("div");
-  totalPedido.className = "totalPedido";
-  totalPedido.innerHTML = `total a pagar por su pedido: $${total}
-  `;
-  bodyCarrito.append(totalPedido);
+  };
 
-})
+//sección Postres
+const mostrarPostres = () => {
+  postres.forEach((arrayPostres) => {
+    let divPostres = document.createElement("div");
+    divPostres.classList.add("classProductos");
+      divPostres.className = "card-body cardsProductos";
+      divPostres.innerHTML +=`
+        <h3 class="card-title">${arrayPostres.nombre}</h3>
+        <p class="card-text">${arrayPostres.categoria}</p>
+        <p class="card-text">$${arrayPostres.precio}</p>
+      `;
+      shopPostres.append(divPostres)
+      //boton comprar
+      let comprar = document.createElement("button");
+      comprar.innerText = "Pedir!";
+      comprar.className = "btn addCart btn-primary";
+      divPostres.append(comprar);
+      //verifico si el carrito tiene dos productos iguales y le sumo la cantidad
+      comprar.addEventListener("click", () => {
+        const repetido = carrito.some((productoRepetido) => productoRepetido.id === arrayPostres.id);
+        if(repetido === true){
+          carrito.map((prod) => {
+            if(prod.id === arrayPostres.id){
+              prod.cantidad++
+            }
+          })
+        } else {
+          carrito.push({
+              id: arrayPostres.id,
+              nombre: arrayPostres.nombre,
+              categoria: arrayPostres.categoria,
+              precio: arrayPostres.precio,
+              cantidad: arrayPostres.cantidad,
+          });
+          console.log(carrito)
+          carritoContador();
+        }
+      });
+  });
+  };
 
- */
+
+
+
+
+
+
 
 /* 
 //seccion productos acompañamientos

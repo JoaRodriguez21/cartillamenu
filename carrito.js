@@ -9,8 +9,8 @@ const mostrarCarrito = () => {
       <p class="card-text">${arrayProductosCarrito.categoria}</p>
       <p class="card-text">$${arrayProductosCarrito.precio}</p>
       <p id="${arrayProductosCarrito.id}"></p>
-      <p>C: ${arrayProductosCarrito.cantidad}</p>
-      <p>T: $${arrayProductosCarrito.cantidad * arrayProductosCarrito.precio}</p>
+      <p>Cantidad: ${arrayProductosCarrito.cantidad}</p>
+      <p>Total: $${arrayProductosCarrito.cantidad * arrayProductosCarrito.precio}</p>
       <img class="eliminarProducto" src="img/iconos/boton-x.png" alt="" type="button" type="button">
       `;
 
@@ -49,10 +49,13 @@ const eliminarProducto = (id) => {
   mostrarCarrito();
 };
 
+//función de contador de productos UTILIZANDO JSON Y STORAGE
 const carritoContador = () => {
   numeroCarrito.style.display = "block";
-  numeroCarrito.innerText = carrito.length;
- 
+  const carritoLength = carrito.length;
+  //numeroCarrito.innerText = carrito.length;
+ localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
+ numeroCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
 };
 
 //contador de productos del carrito
