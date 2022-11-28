@@ -37,6 +37,7 @@
           <div id="divCarrito" class="displayCarritoN">
             <div id="imgCarrito" class="contImgCarrito float-end">
               <img id="verCarrito" src="img/iconos/carrito.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="modal" data-bs-target="#ModalCarrito">
+              <span id="numeroCarrito" class="spanNumeroCarrito"></span>
             </div>
           </div>
           <div class="modal fade" id="ModalCarrito" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -44,12 +45,11 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div id="bodyCarrito" class="modal-body">
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+                  <button id="seguirComprando" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
                   <button type="button" class="btn btn-primary">Pedir</button>
                 </div>
               </div>
@@ -161,6 +161,7 @@
 <script src="productos.js"></script>
 <script src="mesa.js" ></script>
 <script src="shop.js"></script>
+<script src="carrito.js"></script>
 
 
 </body>

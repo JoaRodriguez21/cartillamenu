@@ -26,7 +26,7 @@ botonIngresar.onclick = () => {
         titulo.innerText = `Bienvenido a Cofe Shop, ya puedes realizar tu pedido`
         divTitulo.append(tituloMesa)
         divMesa.remove()
-        divCarrito.className = "displayCarritoB";
+        divCarrito.style.display = "block";
     }
     
 }

@@ -84,37 +84,6 @@ nav div ul li a:hover {
   height: 70px;
 }
 
-/* CARRITO */
-.logoCarrito {
-  width: 50px;
-  height: 50px;
-}
-
-.contImgCarrito {
-  transition: transform 0.2s;
-  padding: 10px;
-}
-
-.contImgCarrito:hover {
-  transform: scale(1.1);
-}
-
-.displayCarritoN {
-  display: none;
-}
-
-.displayCarritoB {
-  display: block !important;
-}
-
-.cardsProductosCarrito {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 /* HEADER */
 .contenedorHeader {
   width: 100%;
@@ -158,6 +127,51 @@ nav div ul li a:hover {
   padding: 10px;
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.btnAgregar {
+  font-family: "Roboto", sans-serif;
+}
+
+/* CARRITO */
+.logoCarrito {
+  width: 50px;
+  height: 50px;
+}
+
+.contImgCarrito {
+  padding: 10px;
+}
+
+/* .contImgCarrito:hover{
+    transform: scale(1.1);
+} */
+.displayCarritoN {
+  display: none;
+}
+
+.cardsProductosCarrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.spanNumeroCarrito {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 4px;
+  top: 48px;
+  right: 125px;
+  position: absolute;
+  display: none;
+}
+
+.eliminarProducto {
+  padding: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

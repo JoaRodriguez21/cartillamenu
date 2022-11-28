@@ -5,6 +5,7 @@ class Producto{
     this.nombre = nombre;
     this.categoria = categoria;
     this.precio = precio;
+    this.cantidad = 1;
     }
 }
 
@@ -28,79 +29,3 @@ const bebidasCalientes = [producto1, producto2, producto3, producto4, producto5,
 const acompañamientos = [producto7, producto8, producto9, producto10]
 //Array: base de datos Postres
 const postres = [producto11, producto12, producto13]
-
-
-//agregar al carrito
-
-/* const divAcompañamientos = document.getElementById("divAcompañamientos")
-
-acompañamientos.forEach(arrayAcompañamientos => {
-  divAcompañamientos.innerHTML += `
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h3 class="card-title">${arrayAcompañamientos.nombre}</h3>
-    <p class="card-text">${arrayAcompañamientos.categoria}</p>
-    <p class="card-text">$${arrayAcompañamientos.precio}</p>
-    <a href="#" class="btn btn-primary">Pedir!</a>
-  </div>
-  </div>`
-})
-
-const divPostres = document.getElementById("divPostres")
-
-postres.forEach(arrayPostres => {
-  divPostres.innerHTML += `
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h3 class="card-title">${arrayPostres.nombre}</h3>
-    <p class="card-text">${arrayPostres.categoria}</p>
-    <p class="card-text">$${arrayPostres.precio}</p>
-    <a href="#" class="btn btn-primary">Pedir!</a>
-  </div>
-  </div>`
-})
- */
-//section carrito
-/* const divCarrito = document.getElementById("divCarrito")
-
-carrito.forEach(arrayCarrito => {
-  divCarrito.innerHTML += `
-  <div class="card" style="width: 10rem;">
-  <div class="card-body">
-  <h3 class="card-title">${arrayCarrito.nombre}</h3>
-  <p class="card-text">${arrayCarrito.categoria}</p>
-    <p class="card-text">$${arrayCarrito.precio}</p>
-  </div>
-  </div>`
-}) */
-
-/* producto.id.onclick = () =>{
-  carrito.push(Producto)
-  alert("producto añadido al carrito")
-}
-
-//crear productos
-const selectCategoria = document.getElementById("selectCategoria")
-const nombreProducto = document.getElementById("nombreProducto")
-const precioProducto = document.getElementById("precioProducto")
-const botonCrear = document.getElementById("botonCrear")
-
-botonCrear.onclick = () => {
-  const productoManual = {
-    nombre: nombreProducto.value,
-    categoria: selectCategoria.value,
-    precio: precioProducto.value,
-  }
-  localStorage.setItem("nuevo producto", JSON.stringify(productoManual))
-  console.log(productoManual)
-  /* if(categoria === 1){
-    bebidasCalientes.push(productoManual)
-  } else if(categoria === 2){
-    acompañamientos.push(productoManual)
-  } else {
-    postres.push(productoManual)
-  }
-  console.log(bebidasCalientes, acompañamientos, postres) */
-
-
-

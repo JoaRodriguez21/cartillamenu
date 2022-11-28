@@ -1,10 +1,10 @@
 //DIV PADRES
+//div boton carrito 
+const verCarrito = document.getElementById("verCarrito");
+//Cantidad de productos que hay en el carrito
+const numeroCarrito = document.getElementById("numeroCarrito");
 //div productos bebidas calientes
 const shopBebidasCalientes = document.getElementById("shopBebidasCalientes")
-//boton carrito
-const verCarrito = document.getElementById("verCarrito");
-//boton seguir comprando
-const seguirComprando = document.getElementById("seguirComprando");
 
 //div productos Acompañantes
 //div productos Postres
@@ -24,24 +24,36 @@ bebidasCalientes.forEach((arrayBebidasCalientes) => {
       <p class="card-text">$${arrayBebidasCalientes.precio}</p>
     `;
     shopBebidasCalientes.append(divBebidasCalientes)
-    //Crear boton comprar
+    //boton comprar
     let comprar = document.createElement("button");
     comprar.innerText = "Pedir!";
     comprar.className = "btn addCart btn-primary";
     divBebidasCalientes.append(comprar);
-
+    //verifico si el carrito tiene dos productos iguales y le sumo la cantidad
     comprar.addEventListener("click", () => {
+      const repetido = carrito.some((productoRepetido) => productoRepetido.id === arrayBebidasCalientes.id);
+      if(repetido === true){
+        carrito.map((prod) => {
+          if(prod.id === arrayBebidasCalientes.id){
+            prod.cantidad++
+          }
+        })
+      } else {
         carrito.push({
             id: arrayBebidasCalientes.id,
             nombre: arrayBebidasCalientes.nombre,
             categoria: arrayBebidasCalientes.categoria,
             precio: arrayBebidasCalientes.precio,
+            cantidad: arrayBebidasCalientes.cantidad,
         });
         console.log(carrito)
+        carritoContador();
+      }
     });
-});
 
-//revisar
+});
+/* 
+//boton carrito
 verCarrito.addEventListener("click", () => {
   bodyCarrito.innerHTML = "";
   carrito.forEach((arrayProductosCarrito) => {
@@ -57,15 +69,15 @@ verCarrito.addEventListener("click", () => {
     bodyCarrito.append(divProductosCarrito);
   });
   const total = carrito.reduce((acc, el) => acc + el.precio, 0);
-  const totalBuying = document.createElement("div");
-  totalBuying.className = "totalPedido";
-  totalBuying.innerHTML = `total a pagar por su pedido: $${total}
+  const totalPedido = document.createElement("div");
+  totalPedido.className = "totalPedido";
+  totalPedido.innerHTML = `total a pagar por su pedido: $${total}
   `;
-  bodyCarrito.append(totalBuying)
+  bodyCarrito.append(totalPedido);
 
 })
 
-//revisar
+ */
 
 /* 
 //seccion productos acompañamientos
