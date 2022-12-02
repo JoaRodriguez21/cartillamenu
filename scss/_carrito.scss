@@ -1,19 +1,25 @@
 /* CARRITO */
 //Logo
 .logoCarrito{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 .contImgCarrito{
     //transition: transform .2s;
-    padding: 10px;
-}
+    padding: 10px 50px;
 
+}
 //Ocultar Carrito
 .displayCarritoN{
  display: none;
 }
-
+//titulo modal
+.tituloCarrito{
+    text-align: center;
+    font-size: 3rem;
+    font-family: $font-especial;
+}
+//modal
 .carritoBody{
     @include flex(column, center, center, wrap);
     width: 1000px !important;
@@ -23,12 +29,19 @@
 }
 .carritoColumn{
     @include flex(column, center, initial , wrap);
+    padding: 20px 20px;
 }
 //cards de productos seleccionados
 .cardsProductosCarrito{
     @include flex(row, space-evenly, center, wrap);
+    margin: 10px 0px;
+    padding: 5px 0px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
-
+.tituloProdCarrito{
+    font-size: 4rem;
+    font-family: $font-especial;
+}
 //span carrito
 .spanNumeroCarrito{
     background-color: red;
@@ -36,8 +49,8 @@
     border-radius: 50%;
     font-size: 12px;
     padding: 4px;
-    top: 48px;
-    right: 125px;
+    top: 135px;
+    right: 47px;
     position: absolute;
     display: none;
 };
@@ -45,4 +58,15 @@
 //Boton borrar
 .eliminarProducto{
     padding: 10px;
+};
+
+.totalPedido{
+    font-size: 2rem;
+    font-family: $font-title;
+    text-align: center;
+}
+//BOTONES
+.btnCarrito{
+    font-size: 2rem;
+    font-family: $font-title;
 }

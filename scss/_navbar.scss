@@ -33,4 +33,19 @@ nav{
     width: 70px;
     height: 70px;
 }
-
+/* fILTROS */
+//contenedor filtros
+.contentFiltros{
+    @include flex(column, center,start,wrap);
+    padding: 100px 30px;
+}
+.contentInput{
+    padding: 30px;
+}
+.inputBuscar{
+    font-size: 1.8rem;
+    font-family: $font-principal;
+}
+.filtroBuscador{
+    display: none !important;
+}

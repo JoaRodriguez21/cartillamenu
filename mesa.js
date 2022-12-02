@@ -26,20 +26,22 @@ botonIngresar.onclick = () => {
     localStorage.setItem("mesaCliente", JSON.stringify(mesaClienteJSON));
     //creo un h4 con su contenido
     const tituloMesa = document.createElement("h4")
+    tituloMesa.className = "subTituloIndex"
     //cambio el titulo del sitio
     if(clienteNuevo.nombre && clienteNuevo.mesa){
         tituloMesa.innerText = `El pedido que seleccione es para la mesa nº${JSON.parse(localStorage.getItem("mesaCliente"))}`
-        titulo.innerText = `Bienvenido a Cofe Shop ${clienteNuevo.nombre}`
+        titulo.innerText = `Bienvenido a Coffe Shop ${clienteNuevo.nombre}`
         divTitulo.append(tituloMesa);
         divMesa.remove()
         divCarrito.style.display = "block";
-        //Una vez registrada la mesa y el nombre muestro los productos
+        //Una vez registrada la mesa muestro el nombre muestro los productos y los filtros
         mostrarBebidasCalientes();
         tituloBebidasCalientes.innerText = "Bebidas Calientes";
         mostrarAcompañantes();
         tituloAcompañantes.innerText = "Acompañantes";
         mostrarPostres();
         tituloPostres.innerText = "Postres";
+        mostrarFiltros();
     }
 }
 //tomo la info del storage

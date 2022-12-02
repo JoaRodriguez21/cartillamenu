@@ -3,13 +3,21 @@ const mostrarCarrito = () => {
   bodyCarrito.innerHTML = "";
   carrito.forEach((arrayProductosCarrito) => {
     let divProductosCarrito = document.createElement("div");
-    divProductosCarrito.className = "cardsProductosCarrito";
+    divProductosCarrito.className = "card cardsProductosCarrito";
     divProductosCarrito.innerHTML += `
-      <h3 class="card-title">${arrayProductosCarrito.nombre}</h3>
-      <p class="card-text">${arrayProductosCarrito.categoria}</p>
-      <p class="card-text">$${arrayProductosCarrito.precio}</p>
+      <div>
+        <h3 class="card-title tituloProdCarrito">${arrayProductosCarrito.nombre}</h3>
+        <p class="card-text">${arrayProductosCarrito.categoria}</p>
+      </div>
+      <div>
+        <p class="card-text">Precio unitario</p>
+        <p class="card-text">$${arrayProductosCarrito.precio}</p>
+      </div>
       <p id="${arrayProductosCarrito.id}"></p>
-      <p>Cantidad: ${arrayProductosCarrito.cantidad}</p>
+      <div>
+        <p class="card-text">Cantidad</p>
+        <p>${arrayProductosCarrito.cantidad}</p>
+      </div>
       <p>Total: $${arrayProductosCarrito.cantidad * arrayProductosCarrito.precio}</p>
       <img class="eliminarProducto" src="img/iconos/boton-x.png" alt="" type="button" type="button">
       `;

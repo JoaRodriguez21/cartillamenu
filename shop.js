@@ -9,6 +9,30 @@ const shopBebidasCalientes = document.getElementById("shopBebidasCalientes");
 const shopAcompañantes = document.getElementById("shopAcompañantes"); //si no funciona cambiar nombre 
 //div productos Postres
 const shopPostres = document.getElementById("shopPostres");
+//div contenedor filtros
+const divFiltros = document.getElementById("divFiltros");
+
+//FILTRO BUSCAR PRODUCTOS
+//función mostrar filtros
+const mostrarFiltros = () => {
+  let divBuscarProducto = document.createElement("div");
+  divBuscarProducto.className = "input-group mb-3 contentInput";
+  divBuscarProducto.innerHTML = `
+    <input id="buscador" type="text" class="form-control inputBuscar" placeholder="Buscar producto..." aria-label="" aria-describedby="basic-addon1">
+  `;
+  divFiltros.append(divBuscarProducto);
+  //funcionamiento de la función:
+  document.addEventListener("keyup", tipeo =>{
+    if (tipeo.target.matches("#buscador")){
+      document.querySelectorAll(".articulo").forEach(prodcards => {
+        prodcards.textContent.toLowerCase().includes(tipeo.target.value.toLowerCase())
+        ?prodcards.classList.remove("filtroBuscador")
+        :prodcards.classList.add("filtroBuscador")
+      })
+    }
+    console.log(tipeo.target.value)
+  })
+}
 
 //Array carrito: base de datos del carrito
 carrito = []
@@ -18,7 +42,7 @@ const mostrarBebidasCalientes = () => {
 bebidasCalientes.forEach((arrayBebidasCalientes) => {
   let divBebidasCalientes = document.createElement("div");
   divBebidasCalientes.classList.add("classProductos");
-    divBebidasCalientes.className = "card-body cardsProductos";
+    divBebidasCalientes.className = "card-body cardsProductos articulo";
     divBebidasCalientes.innerHTML +=`
       <h3 class="card-title">${arrayBebidasCalientes.nombre}</h3>
       <p class="card-text">${arrayBebidasCalientes.categoria}</p>
@@ -60,7 +84,7 @@ const mostrarAcompañantes = () => {
   acompañamientos.forEach((arrayAcompañantes) => {
     let divAcompañantes = document.createElement("div");
     divAcompañantes.classList.add("classProductos");
-      divAcompañantes.className = "card-body cardsProductos";
+      divAcompañantes.className = "card-body cardsProductos articulo";
       divAcompañantes.innerHTML +=`
         <h3 class="card-title">${arrayAcompañantes.nombre}</h3>
         <p class="card-text">${arrayAcompañantes.categoria}</p>
@@ -101,7 +125,7 @@ const mostrarPostres = () => {
   postres.forEach((arrayPostres) => {
     let divPostres = document.createElement("div");
     divPostres.classList.add("classProductos");
-      divPostres.className = "card-body cardsProductos";
+      divPostres.className = "card-body cardsProductos articulo";
       divPostres.innerHTML +=`
         <h3 class="card-title">${arrayPostres.nombre}</h3>
         <p class="card-text">${arrayPostres.categoria}</p>
@@ -136,67 +160,3 @@ const mostrarPostres = () => {
       });
   });
   };
-
-
-
-
-
-
-
-
-/* 
-//seccion productos acompañamientos
-acompañamientos.forEach((arrayAcompañamientos) => {
-  let divBebidasCalientes = document.createElement("div");
-  divBebidasCalientes.classList.add("classProductos")
-    divBebidasCalientes.className = "card-body cardsProductos"
-    divBebidasCalientes.innerHTML +=`
-      <h3 class="card-title">${arrayBebidasCalientes.nombre}</h3>
-      <p class="card-text">${arrayBebidasCalientes.categoria}</p>
-      <p class="card-text">$${arrayBebidasCalientes.precio}</p>
-    `;
-    shopBebidasCalientes.append(divBebidasCalientes)
-    //Crear boton comprar
-    let comprar = document.createElement("button");
-    comprar.innerText = "Pedir!";
-    comprar.className = "btn addCart btn-primary";
-    divBebidasCalientes.append(comprar);
-
-    comprar.addEventListener("click", () => {
-        carrito.push({
-            id: arrayBebidasCalientes.id,
-            nombre: arrayBebidasCalientes.id,
-            categoria: arrayBebidasCalientes.categoria,
-            precio: arrayBebidasCalientes.precio,
-        });
-        console.log(carrito)
-    });
-});
-
-//section productos postres
-bebidasCalientes.forEach((arrayBebidasCalientes) => {
-  let divBebidasCalientes = document.createElement("div");
-  divBebidasCalientes.classList.add("classProductos")
-    divBebidasCalientes.className = "card-body cardsProductos"
-    divBebidasCalientes.innerHTML +=`
-      <h3 class="card-title">${arrayBebidasCalientes.nombre}</h3>
-      <p class="card-text">${arrayBebidasCalientes.categoria}</p>
-      <p class="card-text">$${arrayBebidasCalientes.precio}</p>
-    `;
-    shopBebidasCalientes.append(divBebidasCalientes)
-    //Crear boton comprar
-    let comprar = document.createElement("button");
-    comprar.innerText = "Pedir!";
-    comprar.className = "btn addCart btn-primary";
-    divBebidasCalientes.append(comprar);
-
-    comprar.addEventListener("click", () => {
-        carrito.push({
-            id: arrayBebidasCalientes.id,
-            nombre: arrayBebidasCalientes.id,
-            categoria: arrayBebidasCalientes.categoria,
-            precio: arrayBebidasCalientes.precio,
-        });
-        console.log(carrito)
-    });
-}); */

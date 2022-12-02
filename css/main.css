@@ -84,19 +84,54 @@ nav div ul li a:hover {
   height: 70px;
 }
 
+/* fILTROS */
+.contentFiltros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  padding: 100px 30px;
+}
+
+.contentInput {
+  padding: 30px;
+}
+
+.inputBuscar {
+  font-size: 1.8rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.filtroBuscador {
+  display: none !important;
+}
+
 /* HEADER */
 .contenedorHeader {
   width: 100%;
   height: 70px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   flex-wrap: wrap;
   padding: 10px;
 }
 
 /* Titulo */
+.tituloIndex {
+  font-size: 8rem;
+  font-family: "Dancing Script", cursive;
+  padding: 20px 10px;
+}
+
+.subTituloIndex {
+  font-size: 2.5rem;
+  font-family: "Poppins", sans-serif;
+  padding: 20px 10px;
+}
+
 /* Mesa */
 /* PRODUCTOS */
 .contenedorProductos {
@@ -114,23 +149,6 @@ nav div ul li a:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.cardsProductos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 200px;
-  width: 180px;
-  padding: 10px;
-  margin: 10px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.btnAgregar {
-  font-family: "Roboto", sans-serif;
 }
 
 .cardsProductos {
@@ -166,16 +184,22 @@ nav div ul li a:hover {
 
 /* CARRITO */
 .logoCarrito {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 .contImgCarrito {
-  padding: 10px;
+  padding: 10px 50px;
 }
 
 .displayCarritoN {
   display: none;
+}
+
+.tituloCarrito {
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Dancing Script", cursive;
 }
 
 .carritoBody {
@@ -196,6 +220,7 @@ nav div ul li a:hover {
   justify-content: center;
   align-items: initial;
   flex-wrap: wrap;
+  padding: 20px 20px;
 }
 
 .cardsProductosCarrito {
@@ -204,6 +229,14 @@ nav div ul li a:hover {
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  margin: 10px 0px;
+  padding: 5px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.tituloProdCarrito {
+  font-size: 4rem;
+  font-family: "Dancing Script", cursive;
 }
 
 .spanNumeroCarrito {
@@ -212,14 +245,32 @@ nav div ul li a:hover {
   border-radius: 50%;
   font-size: 12px;
   padding: 4px;
-  top: 48px;
-  right: 125px;
+  top: 135px;
+  right: 47px;
   position: absolute;
   display: none;
 }
 
 .eliminarProducto {
   padding: 10px;
+}
+
+.totalPedido {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.btnCarrito {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.tituloProd {
+  font-size: 4.5rem;
+  font-family: "Dancing Script", cursive;
+  margin: 20px;
+  transition: 1s;
 }
 
 /*# sourceMappingURL=main.css.map */
