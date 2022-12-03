@@ -27,7 +27,24 @@ const mostrarCarrito = () => {
       let eliminar = divProductosCarrito.querySelector(".eliminarProducto");
             
       eliminar.addEventListener("click", () => {
-        eliminarProducto(arrayProductosCarrito.id);
+        Swal.fire({
+          title: '¿Estas seguro de borrar el producto del carrito?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Si, borrar producto'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire(
+              'Producto eliminado del carrito',
+              'El producto se eliminó con éxito',
+              'success'
+            )
+            eliminarProducto(arrayProductosCarrito.id);
+          }
+        })
+        
       });
   });
     //calculo total a pagar
@@ -67,5 +84,56 @@ const carritoContador = () => {
 };
 
 //contador de productos del carrito
-
-carritoContador();
+//carritoContador();
+pedidoCliente = [];
+//boton pedir
+enviarPedido = () => {
+  btnPedir.addEventListener("click", () =>{
+    Swal.fire({
+      title: '¿Estas seguro que quieres realizar el pedido?',
+      text: `Un mozo le llevara su pedido a la mesa nº${JSON.parse(localStorage.getItem("mesaCliente"))}`,
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#42d434',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, enviar pedido'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'El pedido fue realizado con éxito!',
+          'Por favor sea paciente, en breves tendrá su pedido',
+          'success'
+          )
+          pedidoCliente = [...carrito,...pedidoCliente];
+          console.log(pedidoCliente);
+          prodPedidos.innerHTML = "";
+          pedidoCliente.forEach((arrayPedidoCliente) => {
+            let divPedidoCliente = document.createElement("div");
+            divPedidoCliente.className = "card cardsProductosCarrito";
+            divPedidoCliente.innerHTML += `
+            <div>
+            <h3 class="card-title tituloProdCarrito">${arrayPedidoCliente.nombre}</h3>
+            <p class="card-text">${arrayPedidoCliente.categoria}</p>
+            </div>
+            <p id="${arrayPedidoCliente.id}"></p>
+            <div>
+            <p class="card-text">Cantidad</p>
+            <p>${arrayPedidoCliente.cantidad}</p>
+            </div>
+            `;
+            
+            prodPedidos.append(divPedidoCliente);
+          })
+        let tituloPedidoCliente = document.createElement("h2");
+        tituloPedidoCliente.className = "tituloPedidoCliente";
+        tituloPedidoCliente.innerText =`Su pedido está siendo preparado, por favor tenga paciencia`
+        prodPedidos.append(tituloPedidoCliente);
+        
+        carrito = [];
+        mostrarCarrito();
+        carritoContador();
+      }
+    })
+  });
+};
+enviarPedido()

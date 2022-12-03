@@ -1,6 +1,8 @@
 //DIV PADRES
 //div boton carrito 
 const verCarrito = document.getElementById("verCarrito");
+//boton pedir
+const btnPedir = document.getElementById("btnPedir")
 //Cantidad de productos que hay en el carrito
 const numeroCarrito = document.getElementById("numeroCarrito");
 //div productos bebidas calientes
@@ -11,6 +13,9 @@ const shopAcompañantes = document.getElementById("shopAcompañantes"); //si no 
 const shopPostres = document.getElementById("shopPostres");
 //div contenedor filtros
 const divFiltros = document.getElementById("divFiltros");
+//div productos del pedido
+const prodPedidos = document.getElementById("productosPedidos");
+
 
 //FILTRO BUSCAR PRODUCTOS
 //función mostrar filtros
@@ -75,6 +80,13 @@ bebidasCalientes.forEach((arrayBebidasCalientes) => {
         console.log(carrito)
         carritoContador();
       }
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Producto añadido al carrito',
+        showConfirmButton: false,
+        timer: 1500,
+      });
     });
 });
 };
@@ -116,6 +128,13 @@ const mostrarAcompañantes = () => {
           console.log(carrito)
           carritoContador();
         }
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Producto añadido al carrito',
+          showConfirmButton: false,
+          timer: 1500,
+        });
       });
   });
   };
@@ -157,6 +176,13 @@ const mostrarPostres = () => {
           console.log(carrito)
           carritoContador();
         }
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Producto añadido al carrito',
+          showConfirmButton: false,
+          timer: 1500,
+        });
       });
   });
   };

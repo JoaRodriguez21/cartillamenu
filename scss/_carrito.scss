@@ -22,7 +22,7 @@
 //modal
 .carritoBody{
     @include flex(column, center, center, wrap);
-    width: 1000px !important;
+    width: 80% !important;
     margin-left: auto;
     margin-right: auto;
     max-width: 1000px;
