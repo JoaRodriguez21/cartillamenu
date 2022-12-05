@@ -8,7 +8,7 @@ const numeroCarrito = document.getElementById("numeroCarrito");
 //div productos bebidas calientes
 const shopBebidasCalientes = document.getElementById("shopBebidasCalientes");
 //div productos Acompañantes
-const shopAcompañantes = document.getElementById("shopAcompañantes"); //si no funciona cambiar nombre 
+const shopAcompañantes = document.getElementById("shopAcompañantes");
 //div productos Postres
 const shopPostres = document.getElementById("shopPostres");
 //div contenedor filtros
@@ -39,6 +39,38 @@ const mostrarFiltros = () => {
   })
 }
 
+//Aplico FETCH
+//API con diferentes tipos de cafes, descripciones y ingredientes
+const callAPI = () => {
+fetch("https://api.sampleapis.com/coffee/hot")
+  .then(resp => resp.json())
+  .then(data => {
+    
+    shopBebidasCalientes.innerText=JSON.stringify(data);
+    let divBebidasCalientes = document.createElement("div");
+    divBebidasCalientes.innerText +=` titulos: ${data.title}`
+    shopBebidasCalientes.append(divBebidasCalientes)
+    
+    /*divBebidasCalientes.classList.add("classProductos");
+    divBebidasCalientes.className = "card-body cardsProductos articulo";
+    divBebidasCalientes.innerHTML +=`
+      <h3 class="card-title">${JSON.stringify(data.title)}</h3>
+      <p class="card-text">${JSON.stringify(data.description)}</p>
+      <p class="card-text">${JSON.stringify(data.ingredients)}</p>
+      <p id="${JSON.stringify(data.id)}"
+    `;
+    shopBebidasCalientes.append(divBebidasCalientes) */
+
+
+
+
+
+
+  })
+  .catch(e => console.error(new Error(e)))
+
+}
+callAPI();
 //Array carrito: base de datos del carrito
 carrito = []
  
