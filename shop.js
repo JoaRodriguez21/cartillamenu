@@ -15,7 +15,9 @@ const shopPostres = document.getElementById("shopPostres");
 const divFiltros = document.getElementById("divFiltros");
 //div productos del pedido
 const prodPedidos = document.getElementById("productosPedidos");
-
+//div de los productos traidos con la API externa
+const prodApi = document.getElementById("productosApi");
+const carrusel = document.querySelector(".contProdApi");
 
 //FILTRO BUSCAR PRODUCTOS
 //función mostrar filtros
@@ -45,32 +47,56 @@ const callAPI = () => {
 fetch("https://api.sampleapis.com/coffee/hot")
   .then(resp => resp.json())
   .then(data => {
-    
-    shopBebidasCalientes.innerText=JSON.stringify(data);
-    let divBebidasCalientes = document.createElement("div");
-    divBebidasCalientes.innerText +=` titulos: ${data.title}`
-    shopBebidasCalientes.append(divBebidasCalientes)
-    
-    /*divBebidasCalientes.classList.add("classProductos");
-    divBebidasCalientes.className = "card-body cardsProductos articulo";
-    divBebidasCalientes.innerHTML +=`
-      <h3 class="card-title">${JSON.stringify(data.title)}</h3>
-      <p class="card-text">${JSON.stringify(data.description)}</p>
-      <p class="card-text">${JSON.stringify(data.ingredients)}</p>
-      <p id="${JSON.stringify(data.id)}"
-    `;
-    shopBebidasCalientes.append(divBebidasCalientes) */
-
-
-
-
-
-
+      data.forEach((arrayDataAPI) => {
+      let divProdApi = document.createElement("div");
+        divProdApi.innerHTML +=`
+          <div class="contApiImg"> 
+            <img class="card-img-top imgApi" src="${arrayDataAPI.image}" alt="Card image cap">
+            <div class="capaIndex">
+              <h2 class="textTitleApi">${arrayDataAPI.title}</h2>
+              <p class="textIngredientesApi"> Ingredientes: ${arrayDataAPI.ingredients}</p>
+            </div>
+          </div>
+        </div>
+        `;
+        prodApi.append(divProdApi)
+    });
   })
   .catch(e => console.error(new Error(e)))
-
 }
-callAPI();
+
+//GALERIA SCROLL CON APIs
+let maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
+let intervalo = null;
+let step = 1
+const start = () => {
+  intervalo = setInterval(function () {
+    carrusel.scrollLeft = carrusel.scrollLeft + step;
+    if(carrusel.scrollLeft === maxScrollLeft){
+      step = step * -1
+    } else if (carrusel.scrollLeft === 0){
+      step = step * 1;
+    }
+
+  }, 10);
+}
+
+const stop = () => {
+  clearInterval(intervalo);
+};
+
+carrusel.addEventListener("mouseover", () =>{
+  stop();
+})
+
+carrusel.addEventListener("mouseout", () =>{
+  start();
+})
+
+start();
+
+
+
 //Array carrito: base de datos del carrito
 carrito = []
  
@@ -116,7 +142,7 @@ bebidasCalientes.forEach((arrayBebidasCalientes) => {
         position: 'top-end',
         icon: 'success',
         title: 'Producto añadido al carrito',
-        showConfirmButton: false,
+        showConfirmButton: true,
         timer: 1500,
       });
     });

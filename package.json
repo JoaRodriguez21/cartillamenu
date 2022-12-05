@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/JoaRodriguez21/cartillamenu#readme",
   "dependencies": {
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "sweetalert2": "^11.6.15"
   },
-  "devDependencies": {},
   "description": ""
 }
