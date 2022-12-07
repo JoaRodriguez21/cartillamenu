@@ -18,6 +18,9 @@ const prodPedidos = document.getElementById("productosPedidos");
 //div de los productos traidos con la API externa
 const prodApi = document.getElementById("productosApi");
 const carrusel = document.querySelector(".contProdApi");
+//contenedores con clases display None
+const contProductosApi = document.getElementById("contProductosApi");
+const contDivProductos = document.getElementById("contDivProductos");
 
 //FILTRO BUSCAR PRODUCTOS
 //función mostrar filtros
@@ -66,6 +69,8 @@ fetch("https://api.sampleapis.com/coffee/hot")
 }
 
 //GALERIA SCROLL CON APIs
+const carruselApi = () => {
+contProductosApi.style.display = "block";
 let maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
 let intervalo = null;
 let step = 1
@@ -92,8 +97,8 @@ carrusel.addEventListener("mouseover", () =>{
 carrusel.addEventListener("mouseout", () =>{
   start();
 })
-
 start();
+}
 
 
 
@@ -102,6 +107,7 @@ carrito = []
  
 //sección productos bebidas calientes
 const mostrarBebidasCalientes = () => {
+contDivProductos.style.display = "block";
 bebidasCalientes.forEach((arrayBebidasCalientes) => {
   let divBebidasCalientes = document.createElement("div");
   divBebidasCalientes.classList.add("classProductos");

@@ -27,7 +27,8 @@ nav{
     width: 100%;
     height: 100%;
     padding: 10px 50px;
-    background-color: rgba($color: #ffffff00, $alpha: 1.0);
+    color: rgba($color: #ffefd2, $alpha: 0.7);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 .logoNav{
     width: 70px;
@@ -40,7 +41,7 @@ nav{
     padding: 100px 30px;
 }
 .contentInput{
-    padding: 30px;
+    padding: 10px 20px;
 }
 .inputBuscar{
     font-size: 1.8rem;

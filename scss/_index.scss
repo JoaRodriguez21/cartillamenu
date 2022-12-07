@@ -8,19 +8,75 @@
 }
 
 /* Titulo */
+.contTitulosJS{
+    @include flex(column, center, center, nowrap);
+    background-image: url(/img/header1.png);
+    background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    padding: 50px 30px;
+    width: 100%;
+    height: 740px;
+    
+}
 .tituloIndex{
     font-size: 8rem;
     font-family: $font-especial;
     padding: 20px 10px;
+    color: white;
 }
 .subTituloIndex{
     font-size: $text-big;
     font-family: $font-title;
     padding: 20px 10px;
+    color: rgba(255, 255, 255, 0.89);
 }
 
 /* Mesa */
-//.contenedorMesa{}
+.contenedorMesa{
+    width: 80%;
+    height: 80%
+}
+.contMesaForm{
+    @include flex(column, center, center, wrap);
+    width: 500px;
+    height: 300px;
+    
+    padding: 40px;
+    border-radius: 3%;
+    background-color: rgba($color: #838383, $alpha: 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.contTextImput{
+    margin: 20px 10px;
+    width: 80%;
+
+}
+.textImputMesa{
+    font-size: 1.5rem;
+    font-family: $font-title;
+}
+.btnFormMesa{
+    color: azure;
+    font-size: 2rem;
+    font-family: $font-title;
+    background: linear-gradient(350deg, rgba(255,255,255,1) 0%, rgba(181,123,46,1) 46%); 
+    transition: 0.5s;
+}
+.btnFormMesa:hover{
+    transform: scale(1.3);
+}
+.displayNone{
+    display: none;
+}
+
+/* Productos elegidos por el usuario */
+//contenedor
+.contProdPedidos{
+    @include flex(row, center, center, wrap);
+    padding: 20px 50px;
+    background-color: $colorGC;
+}
 
 /* PRODUCTOS API EXTERNA */
 //Contenedor productos

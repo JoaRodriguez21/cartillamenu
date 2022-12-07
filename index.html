@@ -34,46 +34,42 @@
             </li>
           </ul>
           <div id="divFiltros"></div>
+          <!-- boton carrito -->
+          <div id="divCarrito" class="displayCarritoN">
+            <div id="imgCarrito" class="contImgCarrito float-end">
+              <img id="verCarrito" src="img/iconos/carrito.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="modal" data-bs-target="#ModalCarrito">
+              <span id="numeroCarrito" class="spanNumeroCarrito"></span>
+            </div>
+          </div>
+          <div class="modal fade" id="ModalCarrito" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog carritoBody">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="tituloCarrito modal-title" id="exampleModalLabel">Carrito</h1>
+                </div>
+                <div id="bodyCarrito" class="modal-body carritoColumn">
+                </div>
+                <div class="modal-footer">
+                  <button id="seguirComprando" type="button" class="btnCarrito btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+                  <button id="btnPedir" type="button" class="btnCarrito btn btn-primary">Pedir</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         </div>
       </div>
     </nav>
+  <section id="contTitulos" class="contTitulosJS">
     
-    <!-- header -->
-    <section id="header" class="contenedorHeader">
-      <!-- boton carrito -->
-      <div id="divCarrito" class="displayCarritoN">
-        <div id="imgCarrito" class="contImgCarrito float-end">
-          <img id="verCarrito" src="img/iconos/carrito.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="modal" data-bs-target="#ModalCarrito">
-          <span id="numeroCarrito" class="spanNumeroCarrito"></span>
-        </div>
-      </div>
-      <div class="modal fade" id="ModalCarrito" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog carritoBody">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="tituloCarrito modal-title" id="exampleModalLabel">Carrito</h1>
-            </div>
-            <div id="bodyCarrito" class="modal-body carritoColumn">
-            </div>
-            <div class="modal-footer">
-              <button id="seguirComprando" type="button" class="btnCarrito btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
-              <button id="btnPedir" type="button" class="btnCarrito btn btn-primary">Pedir</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Titulo -->
     <section>
       <div id="divTitulo">
         <h1 class="tituloIndex" id="titulo">Registrese para poder realizar su pedido</h1>
       </div>
     </section>
-
     <!-- Elección de mesa -->
-    <div id="divMesa">
+    <!-- <div id="divMesa">
       <section class="contenedorMesa">
         <div class="container">
           <div class="row">
@@ -91,23 +87,39 @@
                       <label for="floatingPassword">Numero de mesa</label>
                     </div>
                     <div class="d-grid">
-                      <button id="botonIngresar" class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Enviar</button>
                     </div>
+                  </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
-    <!-- Productos pedidos por el usuario -->
-    <div id="productosPedidos" class=""></div>
+    </div> -->
+    <div id="divMesa" class="contMesaForm">
+      <div class="form-floating contTextImput">
+        <input type="text" class="form-control textImputMesa" id="inputCliente" placeholder="Nombre del cliente">
+        <label for="floatingInput textImputMesa">Nombre de cliente</label>
+      </div>
+      <div class="form-floating contTextImput">
+        <input type="text" class="form-control textImputMesa" id="inputMesa" placeholder="Numero de mesa">
+        <label for="floatingPassword textImputMesa">Numero de mesa</label>
+      </div>
+      <div>
+        <button id="botonIngresar" class="btn btn-login text-uppercase fw-bold btnFormMesa" type="submit">Enviar</button>
+      </div>
+  </section>
 
+    <!-- Productos pedidos por el usuario --> <!-- //crear divs padres con display none y ponerlos con block en js -->
+    <div id="productosPedidos" class=""></div>
+    
     <!-- Productos con respectivos ingredientes -->
-    <section id="productosApi" class="contProdApi"></section>
+    <div id="contProductosApi" class="displayNone">
+      <section id="productosApi" class="contProdApi"></section>
+    </div>
 
     <!-- productos -->
-    <section id="divProductos" class="contenedorProductos">
+  <div id="contDivProductos" class="displayNone">
+    <section id="divProductos" class="contenedorProductos"><!-- //crear divs padres con display none y ponerlos con block en js -->
         <div>
           <h2 class="tituloProd" id="tituloBebidasCalientes"></h2>
           <div id="shopBebidasCalientes" class="classProductos"></div>
@@ -121,6 +133,7 @@
           <div id="shopPostres" class="classProductos"></div>
         </div>
     </section>
+  </div>
     <!-- footer -->
     <section>
         <div></div>

@@ -36,6 +36,7 @@ botonIngresar.onclick = () => {
         divCarrito.style.display = "block";
         //Una vez registrada la mesa muestro el nombre muestro los productos y los filtros
         callAPI();
+        carruselApi();
         mostrarBebidasCalientes();
         tituloBebidasCalientes.innerText = "Bebidas Calientes";
         mostrarAcompañantes();
