@@ -14,13 +14,17 @@ const shopPostres = document.getElementById("shopPostres");
 //div contenedor filtros
 const divFiltros = document.getElementById("divFiltros");
 //div productos del pedido
+const contProdPedidos = document.getElementById("sectionProdPedidos");
 const prodPedidos = document.getElementById("productosPedidos");
+const tituloProdPedido = document.getElementById("tituloProdPedido");
 //div de los productos traidos con la API externa
 const prodApi = document.getElementById("productosApi");
 const carrusel = document.querySelector(".contProdApi");
+const carrusel2 = document.querySelector(".contProdApi2");
 //contenedores con clases display None
 const contProductosApi = document.getElementById("contProductosApi");
 const contDivProductos = document.getElementById("contDivProductos");
+const navBar = document.getElementById("navBar");
 
 //FILTRO BUSCAR PRODUCTOS
 //función mostrar filtros
@@ -77,14 +81,36 @@ let step = 1
 const start = () => {
   intervalo = setInterval(function () {
     carrusel.scrollLeft = carrusel.scrollLeft + step;
+    console.log(step);
     if(carrusel.scrollLeft === maxScrollLeft){
-      step = step * -1
+      step = step * -1;
     } else if (carrusel.scrollLeft === 0){
-      step = step * 1;
+      step = step * -1;
     }
 
-  }, 10);
+  }, 1);
 }
+
+//titulo galeria con TypedJS
+const typed = new Typed(".typed", {
+  strings: [
+    "Galería",
+    "Productos",
+    "Ingredientes",
+    "Bebidas top",
+    "Joyas",
+    
+  ],
+  typedSpeed: 40, //velocidad
+  startDelay: 300,
+  shuffle: false, //orden de las palabras
+  backDelay: 3000,
+  loop: true,
+  loopCount: false,
+  showCursor: true,
+  cursorChar: "|",
+  contentType: "html",
+})
 
 const stop = () => {
   clearInterval(intervalo);
@@ -99,7 +125,6 @@ carrusel.addEventListener("mouseout", () =>{
 })
 start();
 }
-
 
 
 //Array carrito: base de datos del carrito

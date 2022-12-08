@@ -8,94 +8,76 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="sweetalert2.min.css">
-</head>
     <title>Mi primer app - CoderHouse </title>
 </head>
 <body>
 <main id="main"> 
   
     <!-- navbar -->
+  <div id="navBar" class="displayNav">
     <nav class="navbar navbar-expand-lg bg-light contenedorNav">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><img class="logoNav" src="img/logo.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler btnBurguer" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav m-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#divBebidasCalientes">Bebidas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#divAcompañamientos">Acompañantes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#divPostres">Postres</a>
-            </li>
-          </ul>
+        <div class="collapse navbar-collapse m-auto centerContent" id="navbarNav">
+          <a class="btnDropDown" href="#contProductosApi" role="button">
+            Galería
+          </a>
+          <div class="dropdown">
+            <a class="dropdown-toggle btnDropDown" href="#" role="button" data-bs-toggle="dropdown">
+              Productos
+            </a>
+            <ul class="dropdown-menu m-auto">
+              <li class="nav-item">
+                <a class="nav-link active btnDropDown" href="#shopBebidasCalientes">Bebidas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btnDropDown" href="#shopAcompañantes">Acompañantes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btnDropDown" href="#shopPostres">Postres</a>
+              </li>
+            </ul>
+          </div>
           <div id="divFiltros"></div>
-          <!-- boton carrito -->
-          <div id="divCarrito" class="displayCarritoN">
-            <div id="imgCarrito" class="contImgCarrito float-end">
-              <img id="verCarrito" src="img/iconos/carrito.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="modal" data-bs-target="#ModalCarrito">
-              <span id="numeroCarrito" class="spanNumeroCarrito"></span>
-            </div>
-          </div>
-          <div class="modal fade" id="ModalCarrito" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog carritoBody">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="tituloCarrito modal-title" id="exampleModalLabel">Carrito</h1>
-                </div>
-                <div id="bodyCarrito" class="modal-body carritoColumn">
-                </div>
-                <div class="modal-footer">
-                  <button id="seguirComprando" type="button" class="btnCarrito btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
-                  <button id="btnPedir" type="button" class="btnCarrito btn btn-primary">Pedir</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         </div>
       </div>
-    </nav>
+    <!-- boton carrito -->
+    <div id="divCarrito" class="displayCarritoN">
+      <div id="imgCarrito" class="contImgCarrito float-end">
+        <img id="verCarrito" src="img/iconos/carrito.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="modal" data-bs-target="#ModalCarrito">
+        <span id="numeroCarrito" class="spanNumeroCarrito"></span>
+      </div>
+    </div>
+    <div class="modal fade" id="ModalCarrito" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog carritoBody">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="tituloCarrito modal-title" id="exampleModalLabel">Carrito</h1>
+          </div>
+          <div id="bodyCarrito" class="modal-body carritoColumn">
+          </div>
+          <div class="modal-footer">
+            <button id="seguirComprando" type="button" class="btnCarrito btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+            <button id="btnPedir" type="button" class="btnCarrito btn btn-primary">Pedir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
   <section id="contTitulos" class="contTitulosJS">
-    
     <!-- Titulo -->
     <section>
       <div id="divTitulo">
         <h1 class="tituloIndex" id="titulo">Registrese para poder realizar su pedido</h1>
       </div>
     </section>
-    <!-- Elección de mesa -->
-    <!-- <div id="divMesa">
-      <section class="contenedorMesa">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-              <div class="card border-0 shadow rounded-3 my-5">
-                <div class="card-body p-4 p-sm-5">
-                  <h3 class="card-title text-center mb-5 fw-light fs-5">Coloque su nombre y numero de mesa</h3>
-                  <form>
-                    <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="inputCliente" placeholder="Nombre del cliente">
-                      <label for="floatingInput">Nombre</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="inputMesa" placeholder="Numero de mesa">
-                      <label for="floatingPassword">Numero de mesa</label>
-                    </div>
-                    <div class="d-grid">
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div> -->
     <div id="divMesa" class="contMesaForm">
+      <img src="/img/logo.png" alt="" class="">
       <div class="form-floating contTextImput">
         <input type="text" class="form-control textImputMesa" id="inputCliente" placeholder="Nombre del cliente">
         <label for="floatingInput textImputMesa">Nombre de cliente</label>
@@ -107,19 +89,37 @@
       <div>
         <button id="botonIngresar" class="btn btn-login text-uppercase fw-bold btnFormMesa" type="submit">Enviar</button>
       </div>
-  </section>
-
-    <!-- Productos pedidos por el usuario --> <!-- //crear divs padres con display none y ponerlos con block en js -->
-    <div id="productosPedidos" class=""></div>
+    </section>
+    
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <p>Estamos preparando su pedido...</p>
+        <div id="productosPedidos" class="contProdPedidos"></div>
+        <p>¡Muchas gracias por su compra!</p>
+      </div>
+    </div>
+    <!-- Productos pedidos por el usuario -->
+    <section id="sectionProdPedidos" class="prodPedidos">
+<!--       <div div id="tituloProdPedido" class="contTituloPedido"></div>
+ -->     <div>
+      </div>
+    </section>
     
     <!-- Productos con respectivos ingredientes -->
-    <div id="contProductosApi" class="displayNone">
-      <section id="productosApi" class="contProdApi"></section>
+    <div id="contProductosApi" class="displayNone contProductosApi">
+      <div class="contGaleria">
+        <h2 class="tituloGaleria"><span class="typed tituloGaleria"></span></h2>
+        <section id="productosApi" class="contProdApi"></section>
+      </div>
     </div>
 
     <!-- productos -->
   <div id="contDivProductos" class="displayNone">
-    <section id="divProductos" class="contenedorProductos"><!-- //crear divs padres con display none y ponerlos con block en js -->
+    <section id="divProductos" class="contenedorProductos">
         <div>
           <h2 class="tituloProd" id="tituloBebidasCalientes"></h2>
           <div id="shopBebidasCalientes" class="classProductos"></div>
@@ -140,14 +140,14 @@
     </section>
         
 </main>    
-<!-- <script src="script.js"></script> -->
 <!-- Scripts boostrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<!-- Script sweet alert -->
+<!-- Script LIBRERIA sweet alert -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- <script src="sweetalert2.min.js"></script>
-<script src="sweetalert2.all.min.js"></script> -->
+<!-- Script LIBRERIA Typed.js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
 
 <!-- Mis scripts -->
 <script src="productos.js"></script>

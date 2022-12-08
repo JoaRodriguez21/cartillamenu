@@ -33,6 +33,7 @@ botonIngresar.onclick = () => {
         titulo.innerText = `Bienvenido a Coffe Shop ${clienteNuevo.nombre}`
         divTitulo.append(tituloMesa);
         divMesa.remove()
+        navBar.style.display = "block"
         divCarrito.style.display = "block";
         //Una vez registrada la mesa muestro el nombre muestro los productos y los filtros
         callAPI();

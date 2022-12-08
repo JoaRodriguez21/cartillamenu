@@ -28,14 +28,15 @@
     max-width: 1000px;
 }
 .carritoColumn{
-    @include flex(column, center, initial , wrap);
+    @include flex(column, center, center , wrap);
     padding: 20px 20px;
 }
 //cards de productos seleccionados
 .cardsProductosCarrito{
-    @include flex(row, space-evenly, center, wrap);
+    @include flex(row, space-evenly, center, nowrap);
+    width: 80%;
     margin: 10px 0px;
-    padding: 5px 0px;
+    padding: 5px 20px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 .tituloProdCarrito{
@@ -64,6 +65,7 @@
     font-size: 2rem;
     font-family: $font-title;
     text-align: center;
+    color: $colorT;
 }
 //BOTONES
 .btnCarrito{

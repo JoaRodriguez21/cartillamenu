@@ -101,12 +101,21 @@ enviarPedido = () => {
       if (result.isConfirmed) {
         Swal.fire(
           'El pedido fue realizado con éxito!',
-          'Por favor sea paciente, en breves tendrá su pedido',
+          'En breves tendrá su pedido',
           'success'
           )
           pedidoCliente = [...carrito,...pedidoCliente];
           console.log(pedidoCliente);
           prodPedidos.innerHTML = "";
+          titulo.innerText =`Su pedido está siendo preparado`
+          const divBotonPedido = document.createElement("div");
+          divBotonPedido.className ="btnPedido"
+          divBotonPedido.innerHTML = `
+          <button class="btn btn-outline-success btnVerPedido" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Ver Pedido</button>
+          `;
+          divTitulo.append(divBotonPedido);
+
+
           pedidoCliente.forEach((arrayPedidoCliente) => {
             let divPedidoCliente = document.createElement("div");
             divPedidoCliente.className = "card cardsProductosCarrito";
@@ -117,21 +126,16 @@ enviarPedido = () => {
             </div>
             <p id="${arrayPedidoCliente.id}"></p>
             <div>
-            <p class="card-text">Cantidad</p>
-            <p>${arrayPedidoCliente.cantidad}</p>
+            <p class="card-text">Cantidad: ${arrayPedidoCliente.cantidad}</p>
             </div>
             `;
-            
             prodPedidos.append(divPedidoCliente);
           })
-        let tituloPedidoCliente = document.createElement("h2");
-        tituloPedidoCliente.className = "tituloPedidoCliente";
-        tituloPedidoCliente.innerText =`Su pedido está siendo preparado, por favor tenga paciencia`
-        prodPedidos.append(tituloPedidoCliente);
         
         carrito = [];
         mostrarCarrito();
         carritoContador();
+
       }
     })
   });

@@ -23,16 +23,42 @@ nav{
         }
     }
 }
+.displayNav{
+    display: none;
+}
 .contenedorNav{
     width: 100%;
     height: 100%;
     padding: 10px 50px;
     color: rgba($color: #ffefd2, $alpha: 0.7);
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.centerContent{
+    justify-content: center;
 }
 .logoNav{
     width: 70px;
     height: 70px;
+}
+//botones
+.btnBurguer{
+    display: flex;
+    justify-content: end;
+    color: $colorSecundario;
+}
+.btnDropDown{
+    font-family: $font-title;
+    font-size: 1.5rem;
+    text-align: center;
+    color: $colorT;
+    text-decoration: none;
+    margin: 0px 10px;
+}
+.btnDropDown:hover{
+    color: $colorPrimario;
+    transition: 1s
 }
 /* fILTROS */
 //contenedor filtros
