@@ -83,8 +83,6 @@ const carritoContador = () => {
  numeroCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
 };
 
-//contador de productos del carrito
-//carritoContador();
 pedidoCliente = [];
 //boton pedir
 enviarPedido = () => {
@@ -108,13 +106,16 @@ enviarPedido = () => {
           console.log(pedidoCliente);
           prodPedidos.innerHTML = "";
           titulo.innerText =`Su pedido está siendo preparado`
-          const divBotonPedido = document.createElement("div");
-          divBotonPedido.className ="btnPedido"
-          divBotonPedido.innerHTML = `
-          <button class="btn btn-outline-success btnVerPedido" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Ver Pedido</button>
-          `;
-          divTitulo.append(divBotonPedido);
-
+          const divBotonPedido = document.createElement("button");
+          divBotonPedido.className = "btn btn-outline-success btnVerPedido";
+          divBotonPedido.setAttribute("type", "button");
+          divBotonPedido.setAttribute("data-bs-toggle","offcanvas");
+          divBotonPedido.setAttribute("data-bs-target", "#offcanvasScrolling");
+          divBotonPedido.setAttribute("aria-controls", "offcanvasScrolling");
+          divBotonPedido.innerText = "Ver mi pedido";
+          btnPedidos.append(divBotonPedido)
+/*           divTitulo.append(divBotonPedido);
+ */
 
           pedidoCliente.forEach((arrayPedidoCliente) => {
             let divPedidoCliente = document.createElement("div");

@@ -10,11 +10,11 @@
 /* Titulo */
 .contTitulosJS{
     @include flex(column, space-evenly, center, nowrap);
-    background-image: url(/img/header1.png);
+    background-image: url(../img/header1.png);
     background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-    padding: 50px 30px;
+    padding: 300px 30px;
     width: 100%;
     height: inherit;
 }
@@ -101,6 +101,7 @@
 .btnVerPedido{
     font-size: 2rem;
     font-family: $font-title;
+    margin: 10px !important;
     color: white;
     background: linear-gradient(4deg, rgba(173,171,171,1) 0%, rgba(0,100,228,1) 100%); 
 }
@@ -109,8 +110,7 @@
     transition: 0.8s;
 }
 .btnPedido{
-    @include flex(row, center, center, nowrap);
-
+    @include flex(row, space-evenly, center, nowrap);
 }
 
 /* PRODUCTOS API EXTERNA */
@@ -195,4 +195,61 @@
 //productos 
 .classProductos{
     @include flex(row, center, center, wrap);
+}
+
+/* FOOTER */
+//contenedor
+.footerBG{
+    background-image: url(../img/footer.png);
+    background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    width: 100%;
+    height: 100%;
+
+}
+.contFooter{
+    @include flex(row, space-evenly, center, wrap);
+}
+.footerColumn{
+    @include flex(column, space-evenly, center, nowrap);
+    padding: 50px 20px;
+}
+.logoFooter{
+width: 110px;
+height: 110px;
+}
+.tituloLogo{
+    font-size: 4rem;
+    font-family: $font-especial;
+    color: white;
+}
+.titulosFooter{
+    color: white;
+    font-size: 1.8rem;
+    font-family: $font-title;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    padding: 10px;
+    margin: 20px 30px;
+}
+.infoFooter{
+    color: white;
+    font-size: 1.2rem;
+}
+.infoFooter:hover{
+    transform: scale(1.2);
+    transition: 1s;
+}
+.linkFooter{
+    text-decoration: none;
+    color: white;
+}
+.linkFooter:hover{
+    color: $colorSecundario;
+}
+.iconoFooter{
+    width: 30px;
+    height: 30px;
+    margin: 0px 5px;
 }

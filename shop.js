@@ -2,7 +2,8 @@
 //div boton carrito 
 const verCarrito = document.getElementById("verCarrito");
 //boton pedir
-const btnPedir = document.getElementById("btnPedir")
+const btnPedir = document.getElementById("btnPedir");
+const btnPedidos = document.getElementById("btnPedidos");
 //Cantidad de productos que hay en el carrito
 const numeroCarrito = document.getElementById("numeroCarrito");
 //div productos bebidas calientes
@@ -99,7 +100,7 @@ const typed = new Typed(".typed", {
     "Ingredientes",
     "Bebidas top",
     "Joyas",
-    
+
   ],
   typedSpeed: 40, //velocidad
   startDelay: 300,
@@ -173,7 +174,7 @@ bebidasCalientes.forEach((arrayBebidasCalientes) => {
         position: 'top-end',
         icon: 'success',
         title: 'Producto añadido al carrito',
-        showConfirmButton: true,
+        showConfirmButton: false,
         timer: 1500,
       });
     });

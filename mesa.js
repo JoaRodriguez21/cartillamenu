@@ -9,6 +9,8 @@ const divMesa = document.getElementById("divMesa");
 const imgCarrito = document.getElementById("imgCarrito");
 const divProductos = document.getElementById("divProductos");
 const divCarrito = document.getElementById("divCarrito");
+// FOOTER
+const footer = document.getElementById("footer");
 //titulos productos
 const tituloBebidasCalientes = document.getElementById("tituloBebidasCalientes");
 const tituloAcompañantes = document.getElementById("tituloAcompañantes");
@@ -33,8 +35,9 @@ botonIngresar.onclick = () => {
         titulo.innerText = `Bienvenido a Coffe Shop ${clienteNuevo.nombre}`
         divTitulo.append(tituloMesa);
         divMesa.remove()
-        navBar.style.display = "block"
+        navBar.style.display = "block";
         divCarrito.style.display = "block";
+        footer.style.display = "block";
         //Una vez registrada la mesa muestro el nombre muestro los productos y los filtros
         callAPI();
         carruselApi();
