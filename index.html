@@ -44,16 +44,17 @@
           <div id="divFiltros"></div>
         </div>
       </div>
-    <!-- boton carrito -->
-    <div id="divCarrito" class="displayCarritoN">
-      <div id="imgCarrito" class="contImgCarrito float-end">
-        <img id="verCarrito" src="img/iconos/carrito.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="modal" data-bs-target="#ModalCarrito">
-        <span id="numeroCarrito" class="spanNumeroCarrito"></span>
+      
+      <!-- boton carrito -->
+      <div id="divCarrito" class="displayCarritoN">
+        <div id="imgCarrito" class="contImgCarrito float-end">
+          <img id="verCarrito" src="img/iconos/carrito.svg" alt="" type="button" class="logoCarrito" type="button" data-bs-toggle="modal" data-bs-target="#ModalCarrito">
+          <span id="numeroCarrito" class="spanNumeroCarrito"></span>
+        </div>
       </div>
-    </div>
-    <div class="modal fade" id="ModalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog carritoBody">
-        <div class="modal-content">
+      <div class="modal fade" id="ModalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog carritoBody">
+          <div class="modal-content">
           <div class="modal-header">
             <h1 class="tituloCarrito modal-title" id="exampleModalLabel">Carrito</h1>
           </div>
@@ -68,9 +69,10 @@
     </div>
   </nav>
 </div>
+<!-- Cierra navbar -->
 
+<!-- Titulo -->
   <section id="contTitulos" class="contTitulosJS">
-    <!-- Titulo -->
     <section>
       <div id="divTitulo" class="divTitulos">
         <h1 class="tituloIndex" id="titulo">Registrese para poder realizar su pedido</h1>
@@ -91,7 +93,7 @@
         <button id="botonIngresar" class="btn btn-login text-uppercase fw-bold btnFormMesa" type="submit">Enviar</button>
       </div>
     </section>
-    
+    <!-- OFFCANVAS -->
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasScrollingLabel">desarrollado por: <a href="https://github.com/JoaRodriguez21/cartillamenu">Joaquín Rodríguez</a></h5>
@@ -103,14 +105,11 @@
         <p>¡Muchas gracias por su compra!</p>
       </div>
     </div>
+
     <!-- Productos pedidos por el usuario -->
-    <section id="sectionProdPedidos" class="prodPedidos">
-<!--       <div div id="tituloProdPedido" class="contTituloPedido"></div>
- -->     <div>
-      </div>
-    </section>
+    <section id="sectionProdPedidos" class="prodPedidos"></section>
     
-    <!-- Productos con respectivos ingredientes -->
+    <!-- Galería realizada con una API -->
     <div id="contProductosApi" class="displayNone contProductosApi">
       <div class="contGaleria">
         <h2 class="tituloGaleria"><span class="typed tituloGaleria"></span></h2>
@@ -118,7 +117,7 @@
       </div>
     </div>
 
-    <!-- productos -->
+    <!-- PRODUCTOS -->
   <div id="contDivProductos" class="displayNone">
     <section id="divProductos" class="contenedorProductos">
         <div>
@@ -135,10 +134,11 @@
         </div>
     </section>
   </div>
+
     <!-- footer -->
 <section id="footer" class="displayNone footerBG">
   <div class="footerColumn">
-
+    <!-- Info -->
     <div class="contFooter">
       <div class="footerColumn col-lg-3">
         <img src="img/logo.png" class="logoFooter" alt="">
@@ -147,9 +147,9 @@
       <div class="footerColumn col-lg-3">
         <h2 class="titulosFooter">Contacto</h2>
         <ul>
-          <a href="mailto:rod.joaquin20@gmail.com"><img class="iconoFooter" src="/img/iconos/correo.png" type="button" href="" alt=""></a>
-          <a href="https://github.com/JoaRodriguez21/cartillamenu"><img class="iconoFooter" src="/img/iconos/github.png" type="button" href="" alt=""></a>
-          <a href="https://www.linkedin.com/in/joaqu%C3%ADn-rodr%C3%ADguez-3aa46a1b4"><img class="iconoFooter" src="/img/iconos/linkedin.png" type="button" href="" alt=""></a>
+          <a href="mailto:rod.joaquin20@gmail.com"><img class="iconoFooter" src="img/iconos/correo.png" type="button" href="" alt=""></a>
+          <a href="https://github.com/JoaRodriguez21/cartillamenu"><img class="iconoFooter" src="img/iconos/github.png" type="button" href="" alt=""></a>
+          <a href="https://www.linkedin.com/in/joaqu%C3%ADn-rodr%C3%ADguez-3aa46a1b4"><img class="iconoFooter" src="img/iconos/linkedin.png" type="button" href="" alt=""></a>
         </ul>
       </div>
       <div class="FooterColumn col-lg-5">
@@ -160,7 +160,7 @@
         </p>
       </div>
     </div>
-
+    <!-- linkedin -->
     <div>
       <h4 class="infoFooter">Desarrollado por: <a class="linkFooter" href="">Joaquín Rodríguez</a></h4>
     </div>
